@@ -1,0 +1,239 @@
+*{
+    margin: 0;
+    padding: 0;
+
+}
+.A1{
+    height: 50px;
+    width: 100vw;
+    background-color: rgb(7, 28, 56);
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    font-weight: 600;
+    color: aliceblue;
+    display: flex;
+    justify-content: center; /* Horizontal centering */
+    align-items: center; 
+}
+.A2nav{
+    height: 70px;
+    width: 100vw;
+    background-color: rgb(7, 45, 56);
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    font-weight: 600;
+    color: rgb(0, 0, 0);
+    
+}
+.navbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background-color: #f5f5f5;
+  padding: 10px 20px;
+}
+
+.logo img {
+  height: 40px; /* Adjust size as needed */
+}
+
+.nav-links {
+  list-style-type: none;
+  display: flex;
+  gap: 20px;
+}
+
+.nav-links li a {
+  color: rgb(0, 0, 0);
+  text-decoration: none;
+  padding: 8px 12px;
+  transition: background-color 0.3s ease;
+}
+
+.nav-links li a:hover {
+  background-color: #365663;
+  border-radius: 4px;
+}
+
+.search-bar input {
+  padding: 5px 10px;
+  border-radius: 4px;
+  border: 1px solid #ccc;
+}
+
+.login button {
+  padding: 8px 16px;
+  background-color: #4CAF50;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.login button:hover {
+  background-color: #4553a0;
+}
+.slider_container{
+  position: relative;
+  width: 98vw;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  }
+  
+  .slider_container {
+  position: relative;
+  width: 98%;
+  min-width: 40rem;
+  height: 18rem;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  overflow: hidden;
+  }
+  
+  .slider {
+  position: relative;
+  width: 380%;
+  height: 100%;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  animation: 15s cubic-bezier(1, 0.95, 1,  0.95) sliding infinite;
+  }
+  
+  .slide {
+  position: relative;
+  min-width: 100%;
+  height: 100%;
+  }
+  
+  .slide img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  }
+  
+  .slide .caption {
+  position: absolute;
+  left: 0;
+  bottom: 5%;
+  font-size: 5rem;
+  font-weight: 600;
+  color: white;
+  text-transform: capitalize;
+  background: rgba(0, 0, 0, 0.348);
+  backdrop-filter: blur(10px);
+  padding: 1rem 5rem;
+  border-radius: 0 2rem 2rem 0;
+  }
+  .slide{
+      
+      height: 100%;
+  }
+  
+  @keyframes sliding {
+    0% {
+    transform: translateX(0%);
+    }
+    20% {
+    transform: translateX(0%);
+    }
+    25% {
+    transform: translateX(0%);
+    }
+    45% {
+    transform: translateX(-100%);
+    }
+    50% {
+    transform: translateX(-100%);
+    }
+    70% {
+    transform: translateX(-200%);
+    }
+    75% {
+    transform: translateX(-200%);
+    }
+    95% {
+    transform: translateX(-200%);
+    }
+    100% {
+    transform: translateX(-200%);
+    }
+    }
+    
+ 
+      
+    /* .campus {
+        font-family: Arial, sans-serif;
+        margin: 0;
+        padding: 0;
+        background-color: #ffffff;
+        width:98vw;
+    } */
+
+    /* .container {
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 12px;
+        background: #fafafa;
+    } */
+
+    h1 {
+        text-align: center;
+        margin-bottom: 40px;
+    }
+
+    .campus-grid {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 10px;
+    }
+
+    .campus-card {
+        background-color: rgb(255, 255, 255);
+        border-radius: 10px;
+        overflow: hidden;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        transition: transform 0.3s;
+    }
+
+    .campus-card img {
+        width: 100%;
+        height: auto;
+    }
+
+    .campus-card:hover {
+        transform: translateY(-10px);
+    }
+
+    .campus-content {
+        padding: 15px;
+        text-align: center;
+        background-color: #ffffff;
+    }
+
+    .campus-title {
+        font-size: 1.5em;
+        color: #658e1a;
+        margin-bottom: 10px;
+    }
+
+    .campus-description {
+        font-size: 1em;
+        color: #333;
+    }
+
+    .campus-card a {
+        text-decoration: none;
+        color: inherit;
+    }
+
+    .campus-card a::after {
+        content: '➔';
+        font-size: 1.2em;
+        color: #658e1a;
+        margin-left: 5px;
+        vertical-align: middle;
+    }
+      
