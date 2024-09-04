@@ -34,13 +34,13 @@ if(res.status==201){
 const signIn=async()=>{
   console.log(loginstaff);
   const res=await axios.post("http://localhost:3001/api/stafflogin",loginstaff)
-  const id=staff._id
+  const id=res.data
   console.log(res.data);
   console.log(id);
   
   if(res.status==200){
     // // localStorage.setItem("user",res.data);
-     navigator(`/staffdetails/${staff._id}`)
+     navigator(`/staffdetails/${id}`)
     // console.log(staff._id);
     
   }
