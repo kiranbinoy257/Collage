@@ -14,10 +14,7 @@ const  [user,setUser]=useState({
   password:"",
   cpassword:""
 })
-const  [loginuser,setLoginUser]=useState({
-  email:"",
-  password:""
-})
+
 
 const signUp=async ()=>{
   console.log(user);
@@ -25,30 +22,20 @@ const signUp=async ()=>{
   const res=await axios.post("http://localhost:3001/api/user",user)
   console.log(res);
 if(res.status==201){
-  alert("sign up successfully")
+  alert("signup completed")
+  navigator('/adminlogin')
 }
 }
 
 
-const signIn=async()=>{
-  console.log(loginuser);
-  const res=await axios.post("http://localhost:3001/api/login",loginuser)
-  console.log(res.data);
-  if(res.status==200){
 
-   navigator('/adminpage')
-  }
-  
-}
 
 
  
   const handleChange=(e)=>{
 setUser((pre)=>({...pre,[e.target.name]:e.target.value}))
   }
-  const handleChange2=(e)=>{
-    setLoginUser((pre)=>({...pre,[e.target.name]:e.target.value}))
-      }
+  
   return (
     <div>
       
@@ -65,13 +52,7 @@ setUser((pre)=>({...pre,[e.target.name]:e.target.value}))
 
       <hr />
 
-      <div className="form-section">
-        <h2>Sign In</h2>
-        <input type="text" name="email" onChange={handleChange2} placeholder="Email" />
-        <input type="password" name="password" onChange={handleChange2} placeholder="Password" />
-        <button onClick={signIn}>Sign In</button>
-        <Link to="/forgot" className="forgot-password-link">Forgot password?</Link>
-      </div>
+      
     </div>
     </div>
   )

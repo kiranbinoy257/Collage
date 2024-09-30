@@ -36,42 +36,85 @@ function Getstaff() {
 
     return (
     <>
-      <div className="main">
-                <div className="outer">
-                  <div className="b"></div>
-                <div className="c">
-                <img src="https://cdn-icons-png.flaticon.com/128/54/54476.png" id='c' alt="" />
-                </div>
-                
-                  
-                  
-                   <div className="subd">
-                    
-                    <div className="photo"><img src={data.photo} alt="" /></div>
-                    <div className="deta">
-                    <ul>
-                    {/* <p id='p2'>Name:</p>    */}
-                           <p id='p3'>{data.name} </p>
-                    <p id='p4'>blood :</p> <p id='p5'>{data.blood}</p> 
-                    <p id='p6'>Email :</p> <p id='p7'>{data.email}</p>
-                    <p id='p8'>Salary:</p> <p id='p9'>{data.salary}</p>             
-                    <p id='p10'>Number:</p> <p id='p11'>{data.number}</p>
-                    <p id='p12'>Experience:</p><p id='p13'> {data.experience}</p>
-                    
-                    
-                    </ul>
-                    </div>
-                   
-        
+     <div className="main flex items-center justify-center h-screen bg-gray-100">
+      <div className="outer bg-white shadow-lg rounded-lg p-8 w-full max-w-3xl">
+        {/* Header with Back Button */}
+        <div className="flex justify-between items-center mb-6">
+        <button
+  onClick={() => navigator(-1)}
+  className="fixed top-2 left-2 h-10 w-20 bg-black text-white hover:text-gray-300 focus:outline-none"
+>
+  ← Back
+</button>
 
-                  
-                   <button id='delete' onClick={Delete}>Delete</button>
-                   <Link to={`/staffedit/${data._id}`}> <button id='edit'>Edit</button></Link>
-                   
-                   </div>
-                   
-                </div>
-                </div>
+          <h2 className="text-xl font-bold text-gray-700">Staff Details</h2>
+        </div>
+
+        {/* Staff Photo and Details */}
+        <div className="subd flex items-start">
+          <div className="photo mr-8">
+            <img
+              src={data.photo}
+              alt={data.name}
+              className="w-40 h-40 object-cover rounded-full shadow-md"
+            />
+          </div>
+          <div className="deta flex-1">
+            <ul className="space-y-4 text-sm text-gray-600">
+              <li>
+                <span className="font-semibold">Name:</span> {data.name}
+              </li>
+              <li>
+                <span className="font-semibold">Blood Group:</span> {data.blood}
+              </li>
+              <li>
+                <span className="font-semibold">Email:</span> {data.email}
+              </li>
+              <li>
+                <span className="font-semibold">Salary:</span> {data.salary}
+              </li>
+              <li>
+                <span className="font-semibold">Phone Number:</span> {data.number}
+              </li>
+              <li>
+                <span className="font-semibold">Experience:</span> {data.experience}
+              </li>
+            </ul>
+          </div>
+        </div>
+
+        {/* Action Buttons */}
+        <div className="flex justify-end mt-8 space-x-4">
+        <Link
+            to={'/Addstudent'}
+            className="bg-blue-500 text-white py-2 px-4 rounded-lg hover:bg-blue-600 transition-all"
+          >
+            Add Student
+          </Link>
+          <Link
+            to={'/getstudent'}
+            className="bg-blue-500 text-white py-2 px-4 rounded-lg hover:bg-blue-600 transition-all"
+          >
+           Display Students
+          </Link>
+          
+          <Link to={`/staffedit/${data._id}`}>
+          <button
+            
+            className="bg-blue-500 text-white py-2 px-4 rounded-lg hover:bg-blue-600 transition-all">
+            
+          
+            Edit Data
+          </button>
+          </Link>
+          
+            <button onClick={Delete} className="bg-red-500 text-white py-2 px-4 rounded-lg hover:bg-red-600 transition-all">
+              Delete
+            </button>
+          
+        </div>
+      </div>
+    </div>
                       
      
     </>

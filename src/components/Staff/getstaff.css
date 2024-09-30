@@ -1,0 +1,107 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+
+.mainp{
+    width:100vw;
+    height: 100vh;
+    background: rgb(255, 255, 255);
+     background: linear-gradient(270deg, rgb(28, 37, 39)0%,  rgb(36, 67, 73) 100%);
+    position: relative;
+}
+
+.outerp{
+    width:100vw;
+    height: 100vh;
+    background-color: rgb(158, 49, 158);
+    background: linear-gradient(270deg, rgb(28, 37, 39)0%,  rgb(36, 67, 73) 100%);
+    position:absolute;
+    /* top: 2.5%;
+    left: 3%; */
+    
+}
+
+#contacts{
+    position: absolute;
+    top: 15%;
+    left: 7%;
+    color: rgb(6, 6, 7);
+    margin: 5%;
+    margin-top: 20px;
+    font-size: larger;
+
+}
+.subdivp{
+    height: 500px;
+    width: 98vw;
+    background: transparent;
+    position: absolute;
+    color: rgb(5, 5, 5);
+    top: 11%;
+    left:0%;
+    font-size:110%;
+    font-weight: 400;
+    font-family: 'Times New Roman',;
+    margin-left: 5px;
+    overflow-y: scroll;
+    
+}
+
+/* .subdivp ul{
+    color:white;
+    padding: 4px;
+    border-bottom: 2px solid rgb(29, 22, 37);
+    
+} */
+.subdivp ul img{
+   height: 25px;
+   width: 25px;
+   border-radius: 100%;
+   object-fit: cover;
+}
+
+h5{
+    margin-bottom: 20px;
+    color: antiquewhite;
+    border-radius: 10%;
+}
+
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 20px 0;
+    font-size: 18px;
+    text-align: center;
+    align-items: center;
+}
+
+th, td {
+    padding: 10px;
+    border-bottom: 1px solid #656665;
+}
+
+thead {
+    background-color: rgb(227, 231, 231);
+}
+
+.profile-pic {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+}
+
+tr:hover {
+    background-color: rgb(227, 231, 231);
+}
+
+#back1{
+    position: absolute;
+    top:90% ;
+    left: 87%;
+    background-color: rgb(227, 231, 231);
+    height: 50px;
+    width: 100px;
+    border-radius: 10px;
+}

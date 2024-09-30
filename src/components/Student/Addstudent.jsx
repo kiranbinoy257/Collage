@@ -64,77 +64,138 @@ function convertToBase64(file) {
 
     return (
     <>
-     <div className="addstaff">
-     <div className="cont">
-            <h2  id='h2'>Add Student</h2>
+     <div className="addstaff bg-gray-100 min-h-screen flex items-center justify-center">
+      <div className="cont bg-white p-8 rounded-lg shadow-lg w-full max-w-lg">
+        <h2 id="h2" className="text-2xl font-bold text-red-600 mb-6">Add Student</h2>
+        <form>
+          <div className="form-group mb-4">
+            <label htmlFor="name" className="block text-gray-700">Name:</label>
+            <input
+              type="text"
+              id="name"
+              name="name"
+              onChange={handleChange}
+              required
+              className="w-full px-4 py-2 border border-gray-300 rounded focus:outline-none focus:ring-2 focus:ring-red-400"
+            />
+          </div>
 
-            <form>
-                <div  className="form-group">
-                    <label htmlFor="name">Name:</label>
-                    <input type="text" id="name" name="name" onChange={handleChange} required />
-                </div>
+          <div className="form-group mb-4">
+            <label htmlFor="email" className="block text-gray-700">Email:</label>
+            <input
+              type="email"
+              id="email"
+              name="email"
+              onChange={handleChange}
+              required
+              className="w-full px-4 py-2 border border-gray-300 rounded focus:outline-none focus:ring-2 focus:ring-red-400"
+            />
+          </div>
 
-                <div className="form-group">
-                    <label htmlFor="email">Email:</label>
-                    <input type="email" id="email" name="email" onChange={handleChange}  required />
-                </div>
+          <div className="form-group mb-4">
+            <label htmlFor="blood" className="block text-gray-700">Blood Group:</label>
+            <input
+              type="text"
+              id="blood"
+              name="blood"
+              onChange={handleChange}
+              required
+              className="w-full px-4 py-2 border border-gray-300 rounded focus:outline-none focus:ring-2 focus:ring-red-400"
+            />
+          </div>
 
-                <div  className="form-group">
-                    <label htmlFor="blood">Blood Group:</label>
-                    <input type="text" id="blood" name="blood" onChange={handleChange}  required />
-                </div>
+          <div className="form-group mb-4">
+            <label htmlFor="number" className="block text-gray-700">Contact Number:</label>
+            <input
+              type="tel"
+              id="number"
+              name="number"
+              onChange={handleChange}
+              required
+              className="w-full px-4 py-2 border border-gray-300 rounded focus:outline-none focus:ring-2 focus:ring-red-400"
+            />
+          </div>
 
-                <div  className="form-group">
-                    <label htmlFor="number">Contact Number:</label>
-                    <input type="tel" id="number" name="number" onChange={handleChange}  required />
-                </div>
+          <div className="form-group mb-4">
+            <label htmlFor="department" className="block text-gray-700">Department:</label>
+            <input
+              type="text"
+              id="div"
+              name="div"
+              onChange={handleChange}
+              required
+              className="w-full px-4 py-2 border border-gray-300 rounded focus:outline-none focus:ring-2 focus:ring-red-400"
+            />
+          </div>
 
-                {/* <div id="S5" className="form-group">
-                    <label htmlFor="otp">:</label>
-                    <input type="number" id="otp" name="otp" onChange={handleChange}  required />
-                </div> */}
+          <div className="form-group mb-4">
+            <label htmlFor="stdid" className="block text-gray-700">Student ID:</label>
+            <input
+              type="text"
+              id="stdid"
+              name="stdid"
+              onChange={handleChange}
+              required
+              className="w-full px-4 py-2 border border-gray-300 rounded focus:outline-none focus:ring-2 focus:ring-red-400"
+            />
+          </div>
 
-                <div id="S6" className="form-group">
-                    <label htmlFor="department">Department:</label>
-                    <input type="text" id="Department" name="department" onChange={handleChange}  required />
-                </div>
+          <div className="image mb-4">
+            {photo ? (
+              <img
+                src={photo}
+                alt="Student"
+                style={{ objectFit: "cover" }}
+                className="h-20 w-20 rounded-full"
+              />
+            ) : (
+              <img
+                className="h-20 w-20 rounded-full"
+                style={{ objectFit: "cover" }}
+                src="https://th.bing.com/th/id/OIP.FmrCdUaxYnIUApupO7zpRAHaHa?w=174&h=180&c=7&r=0&o=5&pid=1.7"
+                alt="Placeholder"
+              />
+            )}
+          </div>
 
-                <div id="S7" className="form-group">
-                    <label htmlFor="stdid">Student id:</label>
-                    <input type="text" id="stdid" name="stdid" onChange={handleChange}  required />
-                </div>
+          <div className="form-group mb-4">
+            <label className="block text-gray-700">Choose an Image:</label>
+            <input
+              type="file"
+              id="file"
+              name="photo"
+              onChange={convert}
+              accept="image/*"
+              className="w-full px-4 py-2 border border-gray-300 rounded focus:outline-none focus:ring-2 focus:ring-red-400"
+              required
+            />
+          </div>
 
-                {/* <div id="S8" className="form-group">
-                    <label htmlFor="photo">Photo:</label>
-                    <input type="file" id="photo" name="photo" accept="image/*" required />
-                </div> */}
-                <div className='image'>
-    {
-      photo?<img src={photo} style={{objectFit:"cover"
-      }}  alt="" />:<img className=''style={{objectFit:"cover"
-      }}   src='https://th.bing.com/th/id/OIP.FmrCdUaxYnIUApupO7zpRAHaHa?w=174&h=180&c=7&r=0&o=5&pid=1.7'/>
-    }
-  </div>
+          <div className="form-group mb-4">
+            <label htmlFor="password" className="block text-gray-700">Password:</label>
+            <input
+              type="password"
+              id="password"
+              name="password"
+              onChange={handleChange}
+              required
+              className="w-full px-4 py-2 border border-gray-300 rounded focus:outline-none focus:ring-2 focus:ring-red-400"
+            />
+          </div>
 
-
-                    </form>
-                    <form action="upload.php" method="post">
-        <label >Choose an Image:</label>
-        <input type="file" id="file" name="photo" onChange={convert} accept=".html" required/>
-        
-    </form>
-
-                <div id="S9" className="form-group">
-                    <label htmlFor="password">Password:</label>
-                    <input type="password" id="password" name="password" onChange={handleChange}  required />
-                </div>
-
-                <div className="form-group">
-                    <button type="submit" onClick={addTask} className="submit-button">Add Student</button>
-                </div>
-      
-        </div>
-     </div>
+          <div className="form-group mb-4">
+            <button
+              type="submit"
+              onClick={addTask}
+              className="w-full bg-red-600 text-white py-2 px-4 rounded hover:bg-red-700 transition duration-300"
+            >
+              Add Student
+            </button>
+          </div>
+        </form>
+      </div>
+    </div>
+    
 
     </>
   )

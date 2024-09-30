@@ -16,7 +16,8 @@ router.route('/stafflogin').post(request.staffLogin)
 router.route('/staffhome').post(request.staffHome)
 router.route('/getstaffone').get(Auth,request.getstaffone)
 
-
+router.route('/adminforgeta').post(request.AdminforgetA)
+router.route('/sotpverifya').post(request.sverifyOtpA)
 
 
 
@@ -25,6 +26,7 @@ router.route('/user').post(request.userRegister)
 router.route('/login').post(request.userLogin)
 router.route('/home').post(Auth,request.Home)
 router.route('/fpwd').post(request.Forget)
+router.route('/updateadminpassword/:email').patch(request.updateadminpassword)
 
 router.route('/addstudent').post(request.addstudent)
 router.route('/getstudent').get(request.getstudent)

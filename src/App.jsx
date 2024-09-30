@@ -3,8 +3,11 @@ import React ,{Component} from "react"
 import {BrowserRouter,Routes,Route} from 'react-router-dom'
 import Home from './components/Home'
 import User from './components/Adminlogin/admin'
+import Adminlogin from './components/Adminlogin/adminlogin'
 import Admin from './components/Adminlogin/adminpage'
 import Forgot from './components/Adminlogin/forgot'
+import Newpassadmin from './components/Adminlogin/newpasadmin'
+import Creatnewpassadmin from './components/Adminlogin/Createnewpassword'
 import Staff from './components/Staff/staff'
 import Contactstaff from './components/Staff/contact'
 import Contact from './components/Staff/staffsection'
@@ -16,7 +19,7 @@ import Addstudent from './components/Student/Addstudent'
 import Getstudent from './components/Student/getstudent'
 import Getstudentdata from './components/Student/studentdetails'
 import studentEdit from './components/Student/studentedit'
-import './App.css'
+
 
 const App=()=> {
  
@@ -26,8 +29,11 @@ const App=()=> {
     <Routes>
       <Route path='/' Component={Home}/>
       <Route path='/admin' Component={User}/>
+      <Route path='/adminlogin' Component={Adminlogin}/>
       <Route path='/adminpage' Component={Admin}/>
       <Route path='/forgot' Component={Forgot}/>
+      <Route path='/newpasadmin' Component={Newpassadmin}/>
+      <Route path='/Createnewpasadmin' Component={Creatnewpassadmin}/>
       <Route path='/staffsection' Component={Contactstaff}/>
       <Route path='/staff' Component={Staff}/>
       <Route path='/contact' Component={Contact}/>

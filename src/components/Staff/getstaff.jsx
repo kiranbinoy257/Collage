@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'react'
-import './staffdetails.css'
+import './getstaff.css'
 import axios from 'axios';
 import { Link,useParams  } from 'react-router-dom'
 
@@ -19,43 +19,43 @@ function Getstaff() {
   
     return (
       <>
-        <div className="mainp">
-          <div className="outerp">
-            <form>
-              <input type="text" placeholder="Search" id="Search" />
-            </form>
-            <div className="subdivp">
-              <>
-                
-              {data.map((dt,index)=>(
-               <Link to={`/staffdetails/${dt._id}`}> <ul key={index}>
-                <img src={dt.photo} alt="" />{dt.name}
-             </ul></Link>
-              ))}
-                
-              </>
-              
-    {/* {data.map((dt) => (
-      <div key={dt._id}>
-        
-         <Link to={`/details/${dt._id}`}><button id='oname'>{dt.fname}</button></Link>
-         
-        
-      </div>
+      <table className="min-w-full table-auto">
+  <thead className="bg-gray-200">
+    <tr>
+      <th className="px-4 py-2 text-left">Photo</th>
+      <th className="px-4 py-2 text-left">Name</th>
+      <th className="px-4 py-2 text-left">Email</th>
+    </tr>
+  </thead>
+  <tbody>
+    {data.map((dt, index) => (
+      <tr key={index} className="border-b">
+        <td className="px-4 py-2">
+          <Link to={`/staffdetails/${dt._id}`}>
+          <img 
+                    style={{ objectFit: "cover" }} 
+                    className="h-12 w-12 rounded-full"
+                    src={dt.photo || "https://th.bing.com/th/id/OIP.YpQ0oZGLK4k09k6sq354OwHaHx?rs=1&pid=ImgDetMain"} 
+                    alt="Staff"
+                  />
+          </Link>
+        </td>
+        <td className="px-4 py-2">
+          <Link to={`/staffdetails/${dt._id}`}>
+            {dt.name}
+          </Link>
+        </td>
+        <td className="px-4 py-2">
+          <Link to={`/staffdetails/${dt._id}`}>
+            {dt.email}
+          </Link>
+        </td>
+      </tr>
     ))}
-     */}
+  </tbody>
+</table>
+
   
-  
-            </div>
-            <Link to={'/add'}> <div className="add">
-              <h5>+</h5>
-            </div></Link>
-           
-          </div>
-  
-  
-  
-        </div>
       </>
     )
 }

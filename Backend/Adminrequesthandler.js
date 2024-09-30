@@ -260,8 +260,82 @@ export async function userLogin(req,res){
 }
 
 
+export async function AdminforgetA(req, res) {
+    const { email } = req.body;
+    console.log(email);
+
+    try {
+        const data = await userSchema.findOne({ email: email });
+        if (!data) {
+            return res.status(400).send({ msg: "User not found" });
+        }
+
+        // Generate a random numeric OTP with exactly 6 digits
+        const otp = Math.floor(100000 + Math.random() * 900000);
+        console.log(otp);
+
+        // Update OTP in the database
+        data.otp = otp;
+        await data.save();
+
+        // Send OTP via email
+        const info = await transporter.sendMail({
+            from: 'peterspidy5@gmail.com', // sender address
+            to: data.email, // list of receivers
+            subject: "OTP Verification", // Subject line
+            text: `Your OTP is ${otp}`, // plain text body
+            html: `<b>${otp}</b>`, // HTML body
+        });
+
+        console.log("Message sent: %s", info.messageId);
+
+        // Respond with a success message
+        res.status(200).send({ msg: "OTP sent successfully" });
+    } catch (error) {
+        console.error("Error in studentforget function:", error);
+        res.status(500).send({ msg: "An error occurred while processing your request" });
+    }
+}
 
 
+
+
+
+export async function sverifyOtpA(req, res) {
+    const { email, otp } = req.body;
+    
+
+    const data = await userSchema.findOne({email:email });
+    if (!data) {
+        return res.status(400).send({ msg: "User not found" });
+    }
+
+    if (data.otp === otp) {
+        // Clear OTP from the database after successful verification
+        data.otp = null;
+        await data.save();
+
+        return res.status(200).send({ msg: "OTP verified successfully" });
+    } else {
+        return res.status(400).send({ msg: "Invalid OTP" });
+    }
+}
+
+
+
+
+export async function updateadminpassword(req,res){
+    const {id}=req.params;
+    const {...data}=req.body
+    await userSchema.updateOne ({email:email},{$set:{...data}});
+    try {
+        res.status(201).send({message:"successfully updated "})
+
+    } catch (error) {
+        res.status(400).send({error:error})
+
+    }
+}
 
 
 
